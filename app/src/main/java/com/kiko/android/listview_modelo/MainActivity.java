@@ -12,6 +12,8 @@ public class MainActivity extends Activity {
 
 // TODO: 01/12/18 subir no github!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
 
+// TODO: 01/12/18 inserir breves descricoes nos itens das praias     
+
     private ListView listaPraias;
     private String[] praias = {
             "Santos" , "Praia Grande", "Monguaguá", "Florianópolis", "Natal", "Caxias",
