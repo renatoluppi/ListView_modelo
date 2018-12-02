@@ -14,30 +14,32 @@ public class MainActivity extends Activity {
 
 // TODO: 01/12/18 inserir breves descricoes nos itens das praias     
 
-    private ListView listaPraias;
-    private String[] praias = {
-            "Santos" , "Praia Grande", "Monguaguá", "Florianópolis", "Natal", "Caxias",
-            "Interlagos", "Vila Maria", "Brooklin" , "São Pedro", "Monaco", "Indonésia", "Paris", "Italia", "Brasil"
+    private ListView listaFrutas;
+    private String[] frutas= {
+            "Laranja" , "Maça", "Banana", "Uva", "Goiaba", "Abacaxi",
+            "Pessego", "Melancia", "Maracujá" , "Pitanga"
     };
+
+    private String[] cor= {"Laranja é amarela", "Maça é vermelha", "banana é amarela", "Uva é verde", "Goiaba é verde", "Abacaxi é verde", "Péssego é amarelo",
+            " Melancia é amarela", "Maracujá é amarelo", "Pitanga é amarela, verde ou vermelha"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        listaPraias = (ListView) findViewById(R.id.listaPraiasId);
+        listaFrutas = (ListView) findViewById(R.id.listaPraiasId);
 
         ArrayAdapter<String> benjamim = new ArrayAdapter<String>(
-                getApplicationContext(),android.R.layout.simple_list_item_1, android.R.id.text1, praias);
+                getApplicationContext(),android.R.layout.simple_list_item_1, android.R.id.text1, frutas);
 
-        listaPraias.setAdapter(benjamim);
+        listaFrutas.setAdapter(benjamim);
 
-        listaPraias.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listaFrutas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 int codigoPosicao = i;
-                String valorClicado = listaPraias.getItemAtPosition(codigoPosicao).toString();
-                Toast.makeText(getApplicationContext(), valorClicado, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), cor[codigoPosicao], Toast.LENGTH_SHORT).show();
             }
         });
     }
